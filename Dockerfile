@@ -18,4 +18,5 @@ ENV PYTHONUNBUFFERED 1
 EXPOSE 8000
 
 # Run the command to start the server
-CMD ["sh", "-c", "python manage.py send_birthday_emails_script && gunicorn myproject.wsgi:application --bind 0.0.0.0:8000"]
+#CMD ["sh", "-c", "python manage.py send_birthday_emails_script && gunicorn birthday_system.wsgi:application --bind 0.0.0.0:8000"]
+CMD ["sh", "-c", "python manage.py send_birthday_emails_script && gunicorn birthday_system.wsgi:application --bind 0.0.0.0:$PORT"]
